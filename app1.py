@@ -28,10 +28,10 @@ time.sleep(2.0)
 image_count = 0
 
 try:
-    while image_count < MAX_IMAGES:
+ while image_count < MAX_IMAGES:
         # Capture frame from webcam
         ret, frame = cam.read()
-        if not ret:
+        if not ret or frame is None:
             print("[ERROR] Unable to capture frame. Exiting...")
             break
 
