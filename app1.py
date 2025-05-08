@@ -21,7 +21,7 @@ output_path = os.path.join(DATASET_DIR, name)
 os.makedirs(output_path, exist_ok=True)
 
 print("[INFO] Starting video stream...")
-url="http://192.168.1.22:8080/video"
+url="http://192.168.73.243:8080/video"
 cam = cv2.VideoCapture(url)
 time.sleep(2.0)
 
