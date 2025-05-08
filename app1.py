@@ -223,7 +223,13 @@ accuracy_list =[]
 time_list = []
 while True:
     _, frame = cam.read()
-    frame = imutils.resize(frame, width=600)
+    if frame is not None:
+     frame = imutils.resize(frame, width=600)
+     # continue your processing
+     st.image(frame, channels="BGR")
+    else:
+      st.warning("⚠️ Failed to read frame. Check your phone camera stream URL and ensure both devices are on the same Wi-Fi.")
+
     (h, w) = frame.shape[:2]
     imageBlob = cv2.dnn.blobFromImage(
         cv2.resize(frame, (300, 300)), 1.0, (300, 300),
